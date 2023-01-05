@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+body {
+    margin: 0;
+    padding: 0;
+    background: #555;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: #222;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.clip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.clip1 {
+    background: url(https://images.unsplash.com/photo-1604537529428-15bcbeecfe4d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 46% 0, 39% 100%, 0 100%);
 }
 
-.App-link {
-  color: #61dafb;
+.clip2 {
+    background: url(https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(19% 0, 87% 0, 64% 100%, 33% 100%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.clip3 {
+    background: url(https://images.unsplash.com/photo-1511300636408-a63a89df3482?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(82% 0, 100% 0, 100% 100%, 63% 100%);
+}
+
+.container:hover .clip {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+.container .clip:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
